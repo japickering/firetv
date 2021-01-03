@@ -21,9 +21,31 @@ const styles = {
     },
   },
   carousel: {
+    nav: {
+      listStyle: 'none',
+      position: 'fixed',
+      // top: 0,
+      bottom: 0,
+      // right: 20,
+      zIndex: 3,
+      display: 'block',
+      width: 1300,
+      height: 'auto',
+      overflow: 'hidden',
+    },
     button: {
       display: 'inline-block',
+      width: 300,
       cursor: 'pointer',
+      img: {
+        width: '100%',
+        height: 'auto',
+      },
+      active: {
+        width: '100%',
+        height: 'auto',
+        border: '1px solid goldenrod',
+      },
     },
   },
 };
@@ -41,7 +63,7 @@ export default class App extends Component {
           <div className='container-fluid mt-2' style={{ backgroundColor: '#000' }}>
             <ul style={styles.navbar.menu}>
               <li className='active' style={styles.navbar.menu.item}>
-                <a href='#' style={styles.navbar.menu.link, styles.navbar.menu.active}>
+                <a href='#' style={(styles.navbar.menu.link, styles.navbar.menu.active)}>
                   Home
                 </a>
               </li>
@@ -80,88 +102,82 @@ export default class App extends Component {
             </form> */}
           </div>
         </nav>
+        <header style={{marginLeft: '2em'}}>
+          <h3>Game of Thrones: Season 1 - Deluxe Edition</h3>
+        </header>
         <div className='container-fluid' style={{ backgroundColor: '#000', color: '#fff' }}>
-          <div id='carouselDemo' className='carousel slide' data-bs-ride='carousel'>
-            <ol
-              className=''
-              style={{
-                listStyle: 'none',
-                position: 'absolute',
-                zIndex: 3,
-                display: 'block',
-                width: 300,
-                height: 'auto',
-                overflow: 'hidden',
-              }}>
-              <li
-                data-bs-target='#carouselDemo'
-                data-bs-slide-to='0'
-                className='active'
-                style={(styles.carousel.button, styles.carousel.button.active)}>
+          <div id='slider' className='carousel slide' data-bs-ride='carousel'>
+            <ol className='' style={styles.carousel.nav}>
+              <li data-bs-target='#slider' data-bs-slide-to='0' className='active' style={styles.carousel.button}>
                 <img
-                  src='//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.atHuZsw8g1Yl5CcbdTL1lQHaEs%26pid%3DApi&f=1'
-                  className=''
+                  src='https://i.ytimg.com/vi/sOEYa09bKRc/maxresdefault.jpg'
+                  style={styles.carousel.button.active}
                   alt=''
                 />
-                <div>Episode 1</div>
+                <div>Game of Thrones - Winter Is Coming</div>
               </li>
-              <li data-bs-target='#carouselDemo' data-bs-slide-to='1' style={styles.carousel.button}>
+              <li data-bs-target='#slider' data-bs-slide-to='1' style={styles.carousel.button}>
                 <img
-                  src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.2kf3CHVVipxKradUiT6N6wHaEK%26pid%3DApi&f=1
-'
-                  className=''
+                  src='https://i.ytimg.com/vi/9TYq46lm7mM/maxresdefault.jpg'
+                  style={styles.carousel.button.img}
                   alt=''
-                  border='0'
                 />
-                <div>Episode 2</div>
+                <div>Game of Thrones - The Kingsroad</div>
               </li>
-              <li data-bs-target='#carouselDemo' data-bs-slide-to='2' style={styles.carousel.button}>
+              <li data-bs-target='#slider' data-bs-slide-to='2' style={styles.carousel.button}>
                 <img
-                  src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.-76PFSqaH-45P-Matj0cfQHaDt%26pid%3DApi&f=1
-'
-                  className=''
+                  src='https://i.ytimg.com/vi/R4j4JS85jaI/maxresdefault.jpg'
+                  style={styles.carousel.button.img}
                   alt=''
-                  border='0'
                 />
-                <div>Episode 3</div>
+                <div>Game of Thrones - Lord Snow</div>
+              </li>
+              <li data-bs-target='#slider' data-bs-slide-to='3' style={styles.carousel.button}>
+                <img
+                  src='https://i.ytimg.com/vi/KGDk4-WV-Jw/maxresdefault.jpg'
+                  style={styles.carousel.button.img}
+                  alt=''
+                />
+                <div>Game of Thrones - Cripples, Bastards ..</div>
               </li>
             </ol>
-            <div className='carousel-inner' style={{ maxHeight: '900', overflow: 'hidden' }}>
+
+            <div className='carousel-inner' style={{ paddingLeft: '200px', maxHeight: '1000', overflow: 'hidden' }}>
               <div className='carousel-item active'>
-                <img
-                  src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fksassets.timeincuk.net%2Fwp%2Fuploads%2Fsites%2F55%2F2017%2F08%2F2017_GameOfThrones_HBO_220817.jpg&f=1&nofb=1
-'
-                  className='d-block w-100'
-                  alt=''
-                />
-                <div class='carousel-caption'>
-                  <h5>First slide label</h5>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
+                <iframe
+                  width='1159'
+                  height='652'
+                  src='https://www.youtube.com/embed/sOEYa09bKRc?list=EL3wIaqYZMc08'
+                  frameborder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowfullscreen></iframe>
               </div>
               <div className='carousel-item'>
-                <img
-                  src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.vanityfair.com%2Fphotos%2F5ce2a59f1d6b8739f44c2f54%2F16%3A9%2Fw_1280%2Cc_limit%2Fgame-of-thrones-finale-daenerys-death-emilia-clarke.jpg%3Fmbid%3Dsocial_retweet&f=1&nofb=1
-'
-                  className='d-block w-100'
-                  alt=''
-                />
-                <div class='carousel-caption'>
-                  <h5>Seond slide label</h5>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
+                <iframe
+                  width='1159'
+                  height='652'
+                  src='https://www.youtube.com/embed/9TYq46lm7mM?list=EL3wIaqYZMc08'
+                  frameborder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowfullscreen></iframe>
               </div>
               <div className='carousel-item'>
-                <img
-                  src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fscreenrant.com%2Fwp-content%2Fuploads%2F2017%2F08%2FThe-Night-King-in-the-Game-of-Thrones-episode-Hardhome.jpg&f=1&nofb=1
-'
-                  className='d-block w-100'
-                  alt=''
-                />
-                <div class='carousel-caption'>
-                  <h5>Third slide label</h5>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
+                <iframe
+                  width='1159'
+                  height='652'
+                  src='https://www.youtube.com/embed/R4j4JS85jaI?list=EL3wIaqYZMc08'
+                  frameborder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowfullscreen></iframe>
+              </div>
+              <div className='carousel-item'>
+                <iframe
+                  width='1157'
+                  height='651'
+                  src='https://www.youtube.com/embed/KGDk4-WV-Jw?list=EL3wIaqYZMc08'
+                  frameborder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowfullscreen></iframe>
               </div>
             </div>
             <a className='carousel-control-prev' href='#carouselDemo' role='button' data-bs-slide='prev'>
